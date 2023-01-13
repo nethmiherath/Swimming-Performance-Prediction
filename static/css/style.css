@@ -1,0 +1,39 @@
+form {
+    margin: auto;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.about{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.project{
+    text-align: center;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.result {
+    margin: auto;
+    width: 60%;
+    border: 1px solid #ffffff;
+}
+
+.blurfilter{
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+    font-family: sans-serif;
+    line-height: 1.5;
+    max-width: 60%;
+    margin-top: 90px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}

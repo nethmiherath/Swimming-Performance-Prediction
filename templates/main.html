@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+.background{
+  background-image: url({{url_for ('static', filename = 'img/3.jpg')}});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+</style>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    
+    <title>Swimming Performance Calculator</title>
+</head>
+
+<body class="background">
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+  <a class="navbar-brand" href="/">Swimming Performance Calculator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link active" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">About this Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<div class="container">
+<div class="blurfilter">
+   <form class="form" action="/" method="POST">
+
+    <legend>Input values:</legend>
+    <br>
+        <div class="form-group">
+        <label for="Age" class="fw-bold">Age:</label>
+        <input class="form-control" name="Age" type="number"  placeholder="Enter Age" required>
+        <br>
+    </div>    
+    <div class="form-group">
+        <label for="Height" class="fw-bold">Height:</label>
+        <input class="form-control" name="Height" type="number"  placeholder="Enter Height in Centimeters(cm)" required>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Weight" class="fw-bold">Weight:</label>
+        <input class="form-control" name="Weight" type="number"  placeholder="Enter Weight in Kilograms(kg)" required>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Sex" class="fw-bold">Gender:</label>
+        <select class="form-select" name="Sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Weight" class="fw-bold">Event:</label>
+        <select class="form-select" name="EventAll">
+            <option value="Backstroke">Backstroke</option>
+            <option value="Breaststroke">Breaststroke</option>
+            <option value="Butterfly">Butterfly</option>
+            <option value="Freestyle">Freestyle</option>
+        </select>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Distance" class="fw-bold">Distance:</label>
+        <select class="form-select" name="distance">
+            <option value="100">100m</option>
+        </select>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Reaction_time" class="fw-bold">Reaction Time:</label>
+        <input class="form-control" name="Reaction_time" type="float"  placeholder="Enter Reaction time in Seconds(s)" required>
+        <br>
+    </div>
+    <div class="form-group">
+        <label for="Model" class="fw-bold">Select the model:</label>
+        <div class="form-check">
+            <div>
+                <input class="form-check-input" type="radio" name="Model" value="MLR">
+                <label class="form-check-label">MLR Model</label>
+            </div>
+            <div>
+                <input class="form-check-input" type="radio" name="Model" value="RFR">
+                <label class="form-check-label">RFR Model</label>    
+            </div>
+            <div>
+                <input class="form-check-input" type="radio" name="Model" value="DTR">
+                <label class="form-check-label">DTR Model</label>    
+            </div>
+            <div>
+                <input class="form-check-input" type="radio" name="Model" value="ANN">
+                <label class="form-check-label">ANN Model</label>    
+            </div>
+        </div>    
+    </div>
+    <br>
+    <input class="btn btn-primary" type="submit">
+</form>
+
+<br>
+    <div class="result" align="center">
+        <!-- {% if result %}
+            {% for variable, value in original_input.items() %}
+                <b>{{ variable }}</b> : {{ value }}
+            {% endfor %} -->
+            <br>
+            <br> Predicted time(in Seconds):
+               <h1 class="display-3">{{ result }}</h1>
+            <br>
+        <!-- {% endif %} -->
+    </div> 
+</div>
+
+
+</div>
+<br>
+<br>
+</body>
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-primary">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a class="footer-copyright text-light" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+</footer>
+
+</html>
